@@ -23,11 +23,8 @@ import {
   Header,
 } from '@backstage/core-components';
 
-const useStyles = makeStyles(() => ({
-  overflowXScroll: {
-    overflowX: 'scroll',
-  },
-}));
+const URL_SERVER = "http://localhost:8080/";
+
 
 export type TechRadarPageProps = TechRadarComponentProps & {
   title?: string;
@@ -37,15 +34,12 @@ export type TechRadarPageProps = TechRadarComponentProps & {
 
 export const RadarPage = ({
   title,
-  subtitle,
-  pageTitle,
-  ...props
+  subtitle
 }: TechRadarPageProps): JSX.Element => {
-  const classes = useStyles();
   return (
     <Page themeId="tool">
       <Header title={title} subtitle={subtitle} />
-      <Iframe url="http://localhost:8080/"
+      <Iframe url={URL_SERVER}
         width="1700px"
         height="780px"
         id="myId"

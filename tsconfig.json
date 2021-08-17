@@ -7,7 +7,9 @@
     "plugins/*/migrations"
   ],
   "compilerOptions": {
+    "jsx": "react",
     "outDir": "dist-types",
-    "rootDir": "."
+    "rootDir": ".",
+    "esModuleInterop": true
   }
 }

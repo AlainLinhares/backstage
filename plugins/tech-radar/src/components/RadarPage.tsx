@@ -34,7 +34,7 @@ export const RadarPage = ({}: TechRadarPageProps): JSX.Element => {
         url={URL_SERVER}
         position="absolute"
         width="96%"
-        id="myId"
+        id="iframe-radar"
         height="100%"
         styles={{ height: '25px' }}
       />

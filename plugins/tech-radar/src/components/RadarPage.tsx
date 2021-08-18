@@ -16,11 +16,9 @@
 
 import React from 'react';
 import Iframe from 'react-iframe'
-import { makeStyles } from '@material-ui/core';
 import { TechRadarComponentProps } from '../api';
 import {
-  Page,
-  Header,
+  Page
 } from '@backstage/core-components';
 
 const URL_SERVER = "http://localhost:8080/";
@@ -32,25 +30,15 @@ export type TechRadarPageProps = TechRadarComponentProps & {
   pageTitle?: string;
 };
 
-export const RadarPage = ({
-  title,
-  subtitle
-}: TechRadarPageProps): JSX.Element => {
+export const RadarPage = ({}: TechRadarPageProps): JSX.Element => {
   return (
     <Page themeId="tool">
-      <Header title={title} subtitle={subtitle} />
       <Iframe url={URL_SERVER}
-        width="1700px"
-        height="780px"
+        position="absolute"
+        width="96%"
         id="myId"
-        className="myClassname"
-        position="relative" />
+        height="100%"
+        styles={{ height: "25px" }} />
     </Page>
   );
-};
-
-RadarPage.defaultProps = {
-  title: 'Tech Radar',
-  subtitle: 'Pick the recommended technologies for your projects',
-  pageTitle: 'Company Radar',
 };

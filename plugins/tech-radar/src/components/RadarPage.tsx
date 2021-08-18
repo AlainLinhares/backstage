@@ -15,14 +15,11 @@
  */
 
 import React from 'react';
-import Iframe from 'react-iframe'
+import Iframe from 'react-iframe';
 import { TechRadarComponentProps } from '../api';
-import {
-  Page
-} from '@backstage/core-components';
+import { Page } from '@backstage/core-components';
 
-const URL_SERVER = "http://localhost:8080/";
-
+const URL_SERVER = 'http://localhost:8080/';
 
 export type TechRadarPageProps = TechRadarComponentProps & {
   title?: string;
@@ -33,12 +30,14 @@ export type TechRadarPageProps = TechRadarComponentProps & {
 export const RadarPage = ({}: TechRadarPageProps): JSX.Element => {
   return (
     <Page themeId="tool">
-      <Iframe url={URL_SERVER}
+      <Iframe
+        url={URL_SERVER}
         position="absolute"
         width="96%"
         id="myId"
         height="100%"
-        styles={{ height: "25px" }} />
+        styles={{ height: '25px' }}
+      />
     </Page>
   );
 };
